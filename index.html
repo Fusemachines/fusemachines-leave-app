@@ -438,13 +438,17 @@
     var unreadEmail = $('tbody >tr.unread').length;
     $("#demo").html(unreadEmail +" of "+ totalEmail);
   });
-   </script>
- <script>
+
  $(document).ready(function() {
    $("#onclick").click(function(){
     $(".read").toggle();
 });
      });
+ </script>
+ <script>
+ $(document).ready(function() {
+$( "tr:contains('Freelancer.com')" ).css( "text-decoration", "underline" );
+ });
  </script>
 
 </body>
