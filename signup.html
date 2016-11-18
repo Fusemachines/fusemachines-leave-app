@@ -13,7 +13,7 @@
   <div class="container" >
       <div class="col-md-6" >
           <div id="logbox"  >
-              <form name="signup" >
+              <form name="signup" method="get" >
                   <h1>Create an Account</h1>
   				 <input name="useremail" type="email" placeholder="Email address" class="input pass"/>
            <div id="useremail" style="color:#FF3342" ></div>
@@ -22,8 +22,7 @@
                   <input name="userpassword1" type="password" placeholder="Confirm password" class="input pass"/>
                      <div id="userpassword1" style="color:#FF3342"></div>
                   <input type="submit" value="Sign me up!" class="inputButton"/>
-
-              </form>
+</form>
           </div>
       </div>
   </div>
@@ -35,18 +34,43 @@ $('form').on('submit', function(e){
     var useremail = formElem["useremail"].value;
     var userpassword= formElem["userpassword"].value;
     var userpassword1= formElem["userpassword1"].value;
-    if ((useremail == null || useremail == "") && (userpassword == null || userpassword == "") && (userpassword1 == null || userpassword1 == ""))
+    if (useremail == null || useremail == "")
     {
         document.getElementById("useremail").innerHTML="Email must be filled";
-        document.getElementById("userpassword").innerHTML="Password must be filled";
-        document.getElementById("userpassword1").innerHTML="Password must be filled";
+    }
+     if (userpassword == null || userpassword == "")
+    {
+        document.getElementById("userpassword").innerHTML="Email must be filled";
+    }
+     if (userpassword1 == null || userpassword1== "")
+    {
+        document.getElementById("userpassword1").innerHTML="Email must be filled";
         return false;
     }
-    if(userpassword!=userpassword1){
+      if(userpassword!=userpassword1)
+    {
       document.getElementById("userpassword1").innerHTML="Wrong Password";
-      }
+    }
 
-  });
+    var data = {
+    "username":useremail,
+    "userpassword":userpassword,
+    "userpassword1":userpassword1
+    }
+
+    $.ajax({
+    url: 'http://192.99.172.172:8000/api/authenticate',
+    type: 'POST',
+    dataType: 'json',
+    data: data
+
+  }).done (function(add) {
+    console.log(add,"help");
+      window.location.href ="index.html";
+   });
+   });
+
+
 </script>
   </body>
   </html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+<body>
+
+<ul id="myList1"><li>Coffee</li><li>Tea</li></ul>
+
+<p>Click the button to clone an item</p>
+
+<button>Try it</button>
+
+</body>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("li").clone().appendTo("ul");
+    });
+});
+
+</script>
+<script>
+var response = $.get( "signup.html", function() {
+  alert( "success" );
+});
+</script>script>
+</html>
