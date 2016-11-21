@@ -1,0 +1,14 @@
+table{
+  margin-top: 36px;
+}
+
+thead tr {
+  font-size: large;
+  font-weight: 300;
+}
+
+.table-elem{
+  background-color: #aaa;
+  margin-top: 45px;
+  border-radius: 5px;
+}

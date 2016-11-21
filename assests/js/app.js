@@ -16,9 +16,20 @@ $(document).ready(function(){
          });
 
     });
-  });// document close
+
+    $.get(backendUrl+ '/product').done(function(response){  //post
+              console.log("response",response);
+              response.forEach(function(product){
+                 $("<tr><td>"+product.name +"</td>" +"<td>"+product.retailPrice +"</td>" +"<td>"+product.description +"</td></tr>").appendTo("tbody");
+
+              // document.getElementById('name').innerHTML = product.name;
+              //   document.getElementById('retail price').innerHTML = product.retailPrice;
+              //  $("td").append(product.name);
+       });
+  });
+});
 
 
-  $(function () {
+  $(function () {        //sidebar menu
      $('#menu').metisMenu();
    });
