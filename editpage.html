@@ -11,29 +11,40 @@
       <script src="assests/vendor/js/metisMenu.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body onload="editUser()">
     <div class="container ">
       <div class="row">
-
     <div class="col-sm-6 col-sm-offset-3">
-      <h3>Create New Account</h3>
+      <h3>Edit Your Account</h3>
 
         <div class="form-group">
-          <label for="username">Username/Email</label>
-          <input type="text" class="form-control" id="username" placeholder="Username">
+          <label for="Username">Username</label>
+          <input type="text" class="form-control" id="username" value="username">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="password">Confirm Password</label>
-          <input type="password" class="form-control" id="password1" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary" id="signupForm">Submit</button>
-        <p></p>
-        
-</div>
+          <input type="password" class="form-control" id="password" value="password">
+      </div>
+      <div class="form-group">
+        <label for="fullname">Fullname</label>
+        <input type="text" class="form-control" id="fullname" value="Fullname">
+      </div>
+      <div class="form-group">
+        <label for="number">Mobile Number</label>
+        <input type="text" class="form-control" id="mobile" value="Mobile">
+      </div>
+      <div class="form-group">
+        <label for="text">Birthday</label>
+        <input type="text" class="form-control" id="dob" value="dob">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <form>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+       </form>
+       </div>
+      <button type="submit" class="btn btn-primary" id="editForm">Submit</button>
 
   </div>
      </div>
